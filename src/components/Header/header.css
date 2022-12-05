@@ -1,0 +1,174 @@
+.header {
+  height: 9%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  display: flex;
+  align-items: stretch;
+  padding: 0px 10px;
+  z-index: 2;
+  flex-wrap: wrap;
+}
+.header-links {
+  display: flex;
+  flex-direction: column;
+  gap: 2%;
+  justify-content: center;
+  width: 33%;
+  z-index: 1;
+}
+.pos-absolute {
+  position: absolute;
+}
+.header-links > * {
+  height: 40px;
+  cursor: pointer;
+  position: absolute;
+  transition: 0.3s;
+  top: 10px;
+}
+.header-links > *:hover {
+  transform: scale(1.07);
+}
+.lightin-links:hover {
+  transform: scale(1);
+}
+
+.header-logo {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  width: 33%;
+  cursor: pointer;
+  height: 100%;
+}
+.header-logo:hover {
+  transform: scale(1.03);
+}
+.header-account {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  width: 33%;
+  height: 10vh;
+}
+.header-account-container {
+  height: 80%;
+  position: relative;
+  cursor: pointer;
+}
+.header-account-container:hover {
+  transform: scale(1.04);
+}
+.header-account-container div {
+  position: absolute;
+  transform: translate(-100%, -50%);
+  top: 50%;
+  left: 50%;
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  width: max-content;
+}
+.header-events {
+  height: 45%;
+  cursor: pointer;
+  margin-right: 3%;
+  position: relative;
+  display: none;
+}
+.header-events:hover {
+  transform: scale(1.07);
+}
+
+.notification-unread {
+  position: absolute;
+  top: -4%;
+  left: 55%;
+  background: red;
+  border-radius: 50%;
+  height: 49%;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 800;
+  font-size: 0.7em;
+}
+.header-fullscreen {
+  display: none;
+}
+.header-smallscreen {
+  height: 40px;
+}
+.header-margin-top {
+  position: relative;
+  top: 50%;
+  transform: translate(0, -45%);
+}
+
+@media only screen and (min-width: 450px) {
+  .header-links {
+    align-items: center;
+  }
+  .header-account {
+    justify-content: center;
+  }
+  .header-account-container div {
+    transform: translate(-50%, -50%);
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  .header {
+    height: 12%;
+  }
+  .header-links {
+    position: relative;
+    flex-grow: 1;
+    display: flex;
+    gap: 3%;
+    align-items: center;
+    height: 88%;
+    flex-direction: row;
+    padding: 0;
+    justify-content: left;
+  }
+  .header-links > * {
+    height: 80%;
+  }
+  .pos-absolute {
+    position: relative;
+  }
+  .lightin-links {
+    display: none;
+  }
+  .header-fullscreen {
+    display: block;
+  }
+  .header-smallscreen {
+    display: none;
+  }
+  .header-account {
+    height: 12vh;
+    justify-content: end;
+  }
+  .header-margin-top {
+    top: 0;
+    transform: translate(0, 0);
+  }
+  .header-links > * {
+    position: static;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  .header-events {
+    display: block;
+  }
+  .header-links {
+    min-width: 285px;
+  }
+}

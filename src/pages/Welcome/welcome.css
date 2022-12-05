@@ -1,0 +1,212 @@
+.welcome {
+  background: #c0c0c0 url("../../assets/pic/welcome-background.png");
+  height: 100vh;
+  width: 100vw;
+  background-position: 50% !important;
+  background-size: cover !important;
+  background-repeat: repeat;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  overflow-y: auto;
+  gap: 3px;
+  padding: 0 30px;
+  font-size: 0.7rem;
+}
+.welcome-background-small{
+  background: #c0c0c0 url("../../assets/pic/welcome-background-small.png");
+  height: 99.4%;
+  width: 100vw;
+  background-position: 50% !important;
+  background-size: cover !important;
+}
+
+.welcome-connect-container {
+  background: none;
+  border-radius: 11%;
+  margin: 20px 0;
+  height: 30%;
+  padding: 5px;
+  aspect-ratio: 1/1.2;
+  max-width: 42vw;
+  cursor: pointer;
+  transition: 0.3s ease;
+  position: relative;
+}
+.welcome-connect-container:hover {
+  transform: scale(1.05);
+  background: linear-gradient(116.34deg,#ffbc5b,#ff2d55 50.52%,#c640cd);
+}
+
+.welcome-connect {
+  background: #fffff1;
+  border-radius: 11%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  padding: 7px 0px 25px;
+  height: 100%;
+  aspect-ratio: 1/1.2;
+  width: 100%;
+  cursor: pointer;
+  transition: 0.3s ease;
+  position: relative;
+}
+
+.connect-header {
+  font-size: 1.6em;
+  font-weight: 600;
+}
+
+.connect-context {
+  font-size: 1.125em;
+  max-width: 337px;
+}
+
+.connect-pic {
+  height: 50%;
+  transition: 0.3s ease;
+}
+.welcome-connect-container:hover .connect-pic {
+  margin-bottom: 10%;
+}
+.connect-pic img {
+  width: 100%;
+  height: 100%;
+}
+
+.connect-btn {
+  opacity: 0;
+  background: #c50088;
+  box-shadow: -4px -4px 8px rgba(0, 0, 0, 0.1),
+    4px 4px 8px rgba(255, 109, 188, 0.2);
+  border-radius: 11px;
+  font-weight: 700;
+  font-size: 1.25em;
+  text-align: center;
+  color: #ffffff;
+  padding: 2% 5%;
+  transition: 0.3s ease;
+  position: absolute;
+  bottom: 4%;
+}
+.welcome-connect-container:hover .connect-btn {
+  opacity: 1;
+}
+.connect-btn:hover{
+  bottom: 4.4%;
+}
+/* background: linear-gradient(116.34deg,#ffbc5b,#ff2d55 50.52%,#c640cd); */
+
+.glow-on-hover {
+  z-index: 0;
+  background: linear-gradient(116.34deg,#ffbc5b,#ff2d55 50.52%,#c640cd,#c640cd,#ff2d55 50.52%);
+}
+.glow-on-hover:before {
+  content: '';
+  background: linear-gradient(45deg, #ff0000, #ff7300, #7a00ff, #ff00c8, #ff0000);
+  position: absolute;
+  top: -2px;
+  left:-2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing 20s linear infinite;
+  opacity: 0;
+  transition: opacity .3s ease-in-out;
+  border-radius: 10px;
+}
+
+.glow-on-hover:active {
+  color: #c50088
+}
+
+.glow-on-hover:active:after {
+  background: transparent;
+}
+
+.glow-on-hover:hover:before {
+  opacity: 1;
+}
+
+.glow-on-hover:after {
+  z-index: -1;
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #c50088;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+@keyframes glowing {
+  0% { background-position: 0 0; }
+  50% { background-position: 400% 0; }
+  100% { background-position: 0 0; }
+}
+
+.welcome-header{
+  position: absolute;
+  height: 25%;
+  z-index: 1;
+  top: 3%;
+}
+.welcome-discord{
+  position: absolute;
+  top: 3%;
+  right: 10%;
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  gap: 5px;
+  justify-content: center;
+  align-items: center; 
+  display: none; 
+}
+.welcome-mute{
+  position: absolute;
+  bottom: 3%;
+  left: 3%;
+  height: 6%;
+}
+
+@media only screen and (min-width: 500px){
+  .welcome-connect-container{
+    height: 39%;
+  }
+  .welcome{
+    font-size: 0.8remrem;
+  }
+}
+@media only screen and (min-width: 600px){
+  .welcome-connect-container{
+    height: 50%;
+  }
+  .welcome-discord{
+    display: flex;
+  }
+  .welcome{
+    font-size: 1rem;
+    gap: 30px
+  }
+  .connect-header{
+    padding: 0 28px;
+  }
+  .connect-context{
+    padding: 0 39px;
+  }
+  .connect-pic{
+    padding: 0 18px;
+  }
+}
+@media only screen and (min-width: 850px){
+  .welcome-connect-container{
+    height: 65%;
+  }
+}

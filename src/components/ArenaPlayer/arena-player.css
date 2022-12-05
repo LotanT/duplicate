@@ -1,0 +1,103 @@
+.arena-player {
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.arena-position-img {
+  position: absolute;
+  top: 4%;
+  height: 17%;
+  z-index: 1;
+  display: none;
+}
+.rabbit-sword{
+  animation: rabbit-attacking 1s ease-in-out;
+}
+@keyframes rabbit-attacking {
+    100%{
+        transform: rotate(-540deg);
+        right: 50vw;
+        top: 25%
+    }
+}
+.turtle-sword{
+  animation: turtle-attacking 1s ease-in-out;
+}
+@keyframes turtle-attacking {
+    100%{
+        transform: rotate(540deg);
+        left: 50vw;
+        top: 25%
+    }
+}
+
+
+.player-position{
+    width: 80%;
+    height: 9%;
+    position: relative;
+}
+.arena-position-header{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: 800;
+    font-size: 1.375rem;
+    color: #FFFFFF;
+}
+.player-position img{
+    width: 100%;
+}
+
+.arena-player-img {
+  height: 40%;
+  aspect-ratio: 1;
+  margin-top: 6%; 
+  width: 100%;  
+  text-align: center;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 5%;
+}
+.arena-player-img img{
+    max-width: 100%;
+}
+
+.arena-player-img div{
+    max-width: 90%;
+    color: #FFFFFF;
+    font-family: 'gumdrop';
+    font-size: 0.85em;
+    text-align: center;
+    margin: auto;
+}
+
+.arena-rock {
+  height: 22%;
+  margin-top: 6%;
+  width: 100%;
+  animation: rock 3s linear infinite;
+  position: relative;
+}
+.arena-rock img{
+    max-width: 100%;
+}
+@keyframes rock {
+  0%,100% {
+    top: 0%;
+  }
+  50% {
+    top: 3%;
+  }
+}
+
+@media only screen and (min-width: 600px){
+  .arena-position-img{
+    display: block;
+  }
+}
